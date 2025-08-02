@@ -1,0 +1,122 @@
+{
+  "name": "erdps",
+  "version": "1.0.0",
+  "description": "Enterprise Ransomware Detection and Prevention System - Solution EDR professionnelle",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview",
+    "server:dev": "cd src/server && npm run dev",
+    "server:build": "cd src/server && npm run build",
+    "agent:build": "cd src/agent && cargo build --release",
+    "test": "vitest",
+    "test:integration": "vitest run --config vitest.integration.config.ts",
+    "test:security": "npm run test:security:agent && npm run test:security:server",
+    "test:security:agent": "cd src/agent && cargo test",
+    "test:security:server": "cd src/server && npm test",
+    "deploy:agent": "powershell -ExecutionPolicy Bypass -File scripts/deploy-agent.ps1",
+    "deploy:server": "powershell -ExecutionPolicy Bypass -File scripts/deploy-server.ps1",
+    "build:all": "npm run agent:build && npm run server:build && npm run build",
+    "security:scan": "npm audit && cd src/agent && cargo audit",
+    "docs:generate": "typedoc --out docs/api src/server/src"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^5.84.1",
+    "@tanstack/react-router": "^1.15.0",
+    "@types/react": "^18.2.43",
+    "@types/react-dom": "^18.2.17",
+    "@vitejs/plugin-react": "^4.2.1",
+    "autoprefixer": "^10.4.16",
+    "clsx": "^2.1.0",
+    "lucide-react": "^0.312.0",
+    "postcss": "^8.4.32",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^7.7.1",
+    "recharts": "^2.10.0",
+    "sonner": "^2.0.6",
+    "tailwindcss": "^3.4.0",
+    "typescript": "^5.2.2",
+    "vite": "^5.0.8"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.1.6",
+    "@testing-library/react": "^14.1.2",
+    "@types/node": "^20.10.6",
+    "@typescript-eslint/eslint-plugin": "^6.14.0",
+    "@typescript-eslint/parser": "^6.14.0",
+    "@vitest/ui": "^1.1.0",
+    "babel-plugin-react-dev-locator": "^1.0.5",
+    "eslint": "^8.55.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5",
+    "jsdom": "^23.0.1",
+    "typedoc": "^0.25.7",
+    "vite-plugin-trae-solo-badge": "^1.0.0",
+    "vite-tsconfig-paths": "^5.1.4",
+    "vitest": "^1.1.0"
+  },
+  "keywords": [
+    "edr",
+    "endpoint-detection",
+    "ransomware",
+    "cybersecurity",
+    "enterprise",
+    "windows",
+    "real-time-protection",
+    "threat-detection",
+    "incident-response"
+  ],
+  "author": {
+    "name": "ERDPS Security Team",
+    "email": "security@erdps.com"
+  },
+  "license": "PROPRIETARY",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/company/erdps.git"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "os": [
+    "win32"
+  ],
+  "cpu": [
+    "x64"
+  ],
+  "erdps": {
+    "version": "1.0.0",
+    "buildDate": "2024-01-01",
+    "components": {
+      "agent": {
+        "language": "rust",
+        "platform": "windows",
+        "architecture": "x64"
+      },
+      "server": {
+        "language": "typescript",
+        "runtime": "node",
+        "framework": "fastify"
+      },
+      "console": {
+        "language": "typescript",
+        "framework": "react",
+        "bundler": "vite"
+      }
+    },
+    "security": {
+      "encryption": "TLS 1.3",
+      "authentication": "X.509 certificates",
+      "logging": "SHA-256 signed",
+      "compliance": [
+        "ISO 27001",
+        "NIST",
+        "SOC 2"
+      ]
+    }
+  }
+}

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # ERDPS - Enterprise Ransomware Detection and Prevention System
 
 ## 🛡️ Vue d'ensemble
@@ -108,3 +109,7 @@ npm run test:security
 **Version**: 1.0.0  
 **Licence**: Propriétaire - Usage entreprise uniquement  
 **Dernière mise à jour**: 2024
+=======
+# ERDPS
+Enterprise Ransomware Detection and Protection System - AI-driven cybersecurity tool
+>>>>>>> 19b2ef791b2e4fa2e4460ff272fd516bd2940a09
